@@ -1,0 +1,6 @@
+{
+    "require": {
+        "whichbrowser/parser": "^2.0",
+        "khill/lavacharts" : "3.0.*"
+    }
+}

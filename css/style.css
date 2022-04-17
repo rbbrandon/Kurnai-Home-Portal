@@ -1,0 +1,303 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif;
+  letter-spacing: -1px;
+  background-color: #1B355E;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.flex-container {
+  /* We first create a flex layout context */
+  display: flex;
+  
+  /* Then we define the flow direction 
+     and if we allow the items to wrap 
+   * Remember this is the same as:
+   * flex-direction: row;
+   * flex-wrap: wrap;
+   */
+  flex-flow: row wrap;
+  
+  /* Then we define how is distributed the remaining space */
+  justify-content: center;
+  
+  /* Remove bullet points from flex items */
+  list-style-type: none;
+}
+
+img.logo {
+  /*-webkit-filter: drop-shadow(1px 1px 0 black) 
+                  drop-shadow(-1px -1px 0 black);
+  filter:drop-shadow(1px 1px 0 black) 
+         drop-shadow(-1px -1px 0 black);*/
+  display: block;
+  margin: 0 auto -4em auto;
+  vertical-align: bottom;
+  width: 41em;
+}
+img.chlogo {
+  display:inline-block;
+  vertical-align: middle;
+  height: 2em;
+}
+
+img.tile {
+	border-radius: 2em;
+  border: .1em solid black;
+	width: 8em;
+  height: 8em;
+	margin: auto;
+}
+img.tile[src$='.svg'] {
+	padding: .5em;
+}
+
+div.logospacer {
+	display:inline-block;
+	height: 3em;
+}
+
+
+/* Code to limit figcaption to the width of the figure image */
+figure {
+  display: inline-block;
+  margin: 20px; /* adjust as needed */
+  position: relative;
+  top: 0;
+  left: 0;
+  transition: top ease 0.5s;
+}
+figure img {
+  vertical-align: top;
+  background-color: white;
+}
+figure figcaption {
+  text-align: center;
+  font-size: 1.6em;
+}
+a:link, a:visited {
+  color: #222;
+  text-decoration: none;
+}
+figure:hover {
+  top: -.5em;
+}
+figure:active {
+  left: -.2em;
+}
+
+/* End code to limit figcaption width */
+
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+  /*position: relative;*/
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.25);
+  color: #222;
+  width: 100%;
+  height: 100%;
+  padding: 1em;
+	overflow: hidden;
+	min-height: 100vh;
+}
+
+#container {
+    position: relative;
+	min-height: 100vh;
+}
+#copyright {
+    position: relative;
+    bottom: 0;
+}
+
+/* Google Search box */
+input{
+  position: relative;
+  border: none;
+  padding: 1em;
+  margin: 1em;
+  height: 1em;
+  width: 30%;
+  border:1px solid #eaeaea;
+  outline:none;
+  display:inline-block;
+  vertical-align: middle
+}
+input:hover{
+  border-color: #a0a0a0 #b9b9b9 #b9b9b9 #b9b9b9;
+}
+input:focus{
+  border-color:#4d90fe;
+}
+
+button[type="submit"] {
+  position: relative;
+  border-radius: 2px;
+  background: #f2f2f2;
+  border: 1px solid #f2f2f2;
+  color: #757575;
+  cursor: default;
+  font-size: 1em;
+  font-weight: bold;
+  width: 6em;
+  padding: 0 1em;
+  height:2em;
+}
+button[type="submit"]:hover {
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  background: #f8f8f8;
+  border: 1px solid #c6c6c6;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  color: #222;
+}
+img.searchlogo {
+  height: 2em;
+  display:inline-block;
+  vertical-align: middle
+}
+
+/* Tooltips */
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: -moz-fit-content;
+  width: fit-content;
+  min-width: 10em;
+  background-color: black;
+  color: #fff;
+  text-align: left;
+  padding: 1em;
+  border-radius: 6px;
+  display: none;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+  left: 105%;
+  
+  /* Fade */
+  opacity: 0;
+  transition: opacity .5s;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+  display: table;
+}
+
+/* Draw little arow bit on the tooltip */
+.tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 1.5em;
+  right: 100%; /* To the left of the tooltip */
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+}
+
+/* Flash class and keyframe animation */
+.flashit{
+	-webkit-animation: flash linear .5s infinite;
+	animation: flash linear .5s infinite;
+}
+@-webkit-keyframes flash {
+	0% { opacity: 1; } 
+	50% { opacity: .1; } 
+	100% { opacity: 1; }
+}
+@keyframes flash {
+	0% { opacity: 1; } 
+	50% { opacity: .1; } 
+	100% { opacity: 1; }
+}
+
+/* Misc. */
+.urlforward {
+  border-radius: .5em;
+  border: 1px solid black;
+  background-color: dimgrey;
+  margin: 1em;
+  padding: .5em;
+  display: inline-block;
+}
+.urlforward, .urlforward:link, .urlforward:visited {
+  color: SkyBlue;
+}
+iframe.hidden {
+  display: none;
+  width: 0;
+  height: 0;
+  border: 0;
+  border: none;
+}
+/* Prevent flickering on chart mouseover */
+svg > g > g:last-child {
+  pointer-events: none
+}
+/* This text is in Consolas */
+.monospace { 
+  background-color: white;
+  text-align: left;
+  height: 100%;
+	font-family: Consolas,monaco,monospace; 
+}
+#note {
+    position: absolute;
+    z-index: 150;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fde073;
+    text-align: center;
+    line-height: 2.5;
+    overflow: hidden; 
+    -webkit-box-shadow: 0 0 5px black;
+    -moz-box-shadow:    0 0 5px black;
+    box-shadow:         0 0 5px black;
+}
+/* Start Moving Gradient Background */
+body {
+	/*background: linear-gradient(-45deg, #252c64, #1C75BC, #bcd7f0, #ffffff);*/
+	background: linear-gradient(-45deg, #777, #ccc);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+/* End Moving Gradient Background */
